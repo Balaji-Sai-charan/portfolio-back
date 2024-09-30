@@ -1,9 +1,19 @@
-"scripts": {
-  "start": "node server.js"
-}
-
 {
-    "dependencies": {
-      "express": "^4.21.0"
-    }
+  "name": "portfolio-back",
+  "version": "1.0.0",
+  "description": "Backend for portfolio website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.7.0",
+    "axios": "^1.4.0"
+  },
+  "engines": {
+    "node": ">=20.15.1"
   }
+}

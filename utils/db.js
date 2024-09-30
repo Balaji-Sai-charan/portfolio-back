@@ -1,7 +1,16 @@
 const mongoose = require('mongoose');
-require('dotenv').config(); // Ensure dotenv is loaded
-const uri = process.env.MONGODB_URI;
+// const URI = "mongodb://127.0.0.1:27017/portfolio";
+const URI =
+ process.env.MONGODB_URI;
+const connectDb=async()=>{
+    try{
+        await mongoose.connect(URI);
+        console.log("connection succesfull to db");
+    }
+    catch(error){
+        console.error(error);
+        process.exit(0);
+    }
+}
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.error("MongoDB connection error:", err));
+module.exports=connectDb;
